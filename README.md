@@ -72,8 +72,6 @@ Flutter 97
 
 </br>
 
-# Proje Backlogs
-</br>
 
 # Ürün Açıklaması
 
