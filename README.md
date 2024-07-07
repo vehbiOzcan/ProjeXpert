@@ -3,30 +3,12 @@ Flutter 97
 
 # Takım Üyeleri
 
-<style>
-  table {
-    width: 100%;
+<table style=" width: 100%;
     border-collapse: separate;
     border-spacing: 0;
     border: 1px solid #333333;
     border-radius: 8px;
-    overflow: hidden;
-  }
-  th, td {
-    border: 1px solid #;
-    padding: 8px;
-    text-align: left;
-  }
-  tr:nth-child(even){
-    background-color: #1c1c1c
-  }
-  .icon {
-    width: 16px;
-    height: 16px;
-  }
-</style>
-
-<table>
+    overflow: hidden;">
   <thead>
     <tr>
       <th>İsim</th>
@@ -40,10 +22,10 @@ Flutter 97
       <td>Scrum Master</td>
       <td>
         <a href="https://github.com/vehbiOzcan" target="_blank">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github" class="icon">
+          <img  src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:16px;" alt="Github" class="icon">
         </a>
         <a href="https://www.linkedin.com/in/vehbiozcan" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" class="icon">
+          <img  src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
     </tr>
@@ -52,10 +34,10 @@ Flutter 97
       <td>Product Owner</td>
       <td>
         <a href="https://github.com/yusufalpyildiz" target="_blank">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github" class="icon">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:16px;" alt="Github" class="icon">
         </a>
         <a href="https://www.linkedin.com/in/yusufalpyildiz1/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" class="icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
     </tr>
@@ -64,10 +46,10 @@ Flutter 97
       <td>Developer</td>
       <td>
         <a href="https://github.com/ZeynepCeyhan" target="_blank">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Github" class="icon">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:16px;" alt="Github" class="icon">
         </a>
         <a href="https://www.linkedin.com/in/zeynep-ceyhan/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" class="icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
     </tr>
@@ -76,7 +58,7 @@ Flutter 97
       <td>Developer</td>
       <td>
         <a href="https://www.linkedin.com/in/fazilenisagazan/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn" class="icon">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
     </tr>
