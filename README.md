@@ -1,5 +1,12 @@
+# ProjeXpert
+![alt text](sprint_files/shared/projeXpert_banner.png)
+
+</br>
+
 # Takım İsmi
 Flutter 97
+
+</br>
 
 # Takım Üyeleri
 
@@ -72,6 +79,12 @@ Flutter 97
 
 </br>
 
+# Ürün Logosu
+<img src="./sprint_files/shared/logo.png" style="width: 100%;
+  max-width: 300px;
+  height: auto; ">
+
+</br>
 
 # Ürün Açıklaması
 
@@ -85,6 +98,7 @@ ProjeXpert, proje yönetimini modern bir seviyeye taşıyan yenilikçi bir uygul
 3. **Esnek ve Kullanıcı Dostu Arayüz:** Kullanıcıların ihtiyaçlarına göre özelleştirilebilen basit ve sezgisel arayüz.
 4. **Özelleştirilebilir Raporlama:** Proje ilerlemesi, ekip performansı ve hedeflere ulaşma durumu hakkında detaylı ve özelleştirilebilir raporlar.
 
+</br>
 
 # Hedef Kitle
 ProjeXpert, geniş bir kullanıcı kitlesine hitap eden esnek ve güçlü bir araçtır:
@@ -129,6 +143,6 @@ ProjeXpert, geniş bir kullanıcı kitlesine hitap eden esnek ve güçlü bir ar
 
 ## Sprint Backlog URL:
 
-<a href="https://app.asana.com/0/1207751422682466/1207751329431290" style="font-size:18px;display:flex; align-items:center;"><img src="./sprint_files/sprint1/asana.png" style="width:48px; height:48px; margin-right:5px"><span>Asana sprint backlog workspace bağlantısı</span></a>
+<a href="https://app.asana.com/0/1207751422682466/1207751329431290" style="font-size:18px;display:flex; align-items:center;"><img src="./sprint_files/shared/asana.png" style="width:48px; height:48px; margin-right:5px"><span>Asana sprint backlog workspace bağlantısı</span></a>
 
 ---
