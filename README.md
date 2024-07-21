@@ -213,26 +213,28 @@ Sprint boyunca belirlenen hedeflere ulaşmak için yoğun bir tempoda çalışı
 
 ## Uygulama Görüntüleri (App ve API)
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-  <div style="flex: 1 1 45%;">
-    <img src="./sprint_files/sprint2/proje1.PNG" alt="Proje 1" style="width: 100%;">
+<div>
+  <div>
+    <img src="./sprint_files/sprint2/proje1.PNG" alt="Proje 1" style="max-width:200px;">
   </div>
-  <div style="flex: 1 1 45%;">
-    <img src="./sprint_files/sprint2/proje2.PNG" alt="Proje 2" style="width: 100%;">
+  <div>
+    <img src="./sprint_files/sprint2/proje2.PNG" alt="Proje 2" style="max-width:200px;">
   </div>
-  <div style="flex: 1 1 45%;">
-    <img src="./sprint_files/sprint2/proje3.PNG" alt="Proje 3" style="width: 100%;">
+  <div>
+    <img src="./sprint_files/sprint2/proje3.PNG" alt="Proje 3" style="max-width:200px;">
   </div>
-  <div style="flex: 1 1 45%;">
-    <img src="./sprint_files/sprint2/proje4.PNG" alt="Proje 4" style="width: 100%;">
+  <div>
+    <img src="./sprint_files/sprint2/proje4.PNG" alt="Proje 4" style="max-width:200px;">
   </div>
-  <div style="flex: 1 1 45%;">
-    <img src="./sprint_files/sprint2/proje5.PNG" alt="Proje 5" style="width: 50%;">
-  </div>
-  <div style=";">
-    <img src="./sprint_files/sprint2/proje6.PNG" alt="Proje 6" style="width: 100%;">
+  <div>
+    <img src="./sprint_files/sprint2/proje5.PNG" alt="Proje 5" style="max-width:200px;">
   </div>
 </div>
+
+<div>
+    <img src="./sprint_files/sprint2/proje6.PNG" alt="Proje 6" style="width: 100%;">
+  </div>
+
 
 <br>
 
