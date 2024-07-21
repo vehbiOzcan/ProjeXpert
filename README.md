@@ -111,6 +111,9 @@ ProjeXpert, geniş bir kullanıcı kitlesine hitap eden esnek ve güçlü bir ar
 
 ---
 
+<details>
+<summary><h2>Sprint 1</h2></summary>
+
 # Sprint 1
 
 - **Sprint 1** için puan değerlendirmesi *40* olarak belirlenmiştir.
@@ -144,5 +147,113 @@ ProjeXpert, geniş bir kullanıcı kitlesine hitap eden esnek ve güçlü bir ar
 ## Sprint Backlog URL:
 
 <a href="https://app.asana.com/0/1207751422682466/1207751329431290" style="font-size:18px;display:flex; align-items:center;"><img src="./sprint_files/shared/asana.png" style="width:48px; height:48px; margin-right:5px"><span>Asana sprint backlog workspace bağlantısı</span></a>
+</details>
+
+---
+
+# Sprint 2 
+
+- **Sprint 2** için puan değerlendirmesi *100* olarak belirlenmiştir.
+- **Puan tamamlama mantığı**: Proje boyunca tamamlanması gereken backlog puanı *260*'dır. İkinci Sprint için bitirilmesi istenilen puan sayısı *100* olarak belirlenmiştir ve hedefe ulaşılmıştır.
+
+## Daily Scrum
+
+**Sprint Süreci:**
+ProjeXpert'in ikinci sprinti, iki hafta boyunca süren verimli bir çalışma dönemi oldu. Sprint boyunca belirlenen kullanıcı hikayeleri üzerine odaklandık ve toplantılarımızı Slack üzerinden huddle ve chat ile gerçekleştirdik. İşte bu süreçte yaşananlar:
+
+**1. Hafta:**
+
+ Gün 1-3:
+
+- Kullanıcı kayıt sayfasının tasarımı ve temel işlevselliği üzerinde çalışıldı.
+
+- İlk tasarım ve işlevsellik tamamlandı, test edilmeye başlandı.
+
+Gün 4-5:
+
+- Kullanıcı giriş sayfası tasarlandı ve geliştirildi.
+
+Gün 6-7:
+
+- Projelerim sayfası tasarlandı.
+- Kullanıcının projelerini listeleme ve hızlı erişim özellikleri geliştirildi.
+- İlk işlevsellik test edildi.
+
+**2. Hafta**:
+
+Gün 8:
+
+- Proje detay sayfasının tasarımı ve geliştirilmesi başladı.
+
+Gün 9-14:
+
+- Kullanıcı kayıt, giriş, projelerim ve proje detay sayfaları için API uç noktaları oluşturuldu.
+- Şifreleme işlemleri gerçekleştirildi.
+- Postman üzerinden her bir endpoint için API testleri gerçekleştirildi.
+
+Gün 14:
+
+- Hatalar düzeltildi ve son iyileştirmeler yapıldı.
+
+**İletişim ve İşbirliği**
+
+Sprint boyunca Slack üzerinde aktif olarak iletişimde kaldık. Huddle görüşmeleri, hızlı ve etkili bir şekilde bilgi paylaşımı ve sorun çözümü sağladı. Chat üzerinden sürekli olarak güncellemeler paylaşıldı.
+
+Sprint boyunca belirlenen hedeflere ulaşmak için yoğun bir tempoda çalışıldı ve güzel sayılabilir bir ilerleme kaydettik. Her bir kullanıcı hikayesi tamamlandı ve ProjeXpert'in işlevselliği önemli ölçüde geliştirildi.
+
+## Sprint Board Ekran Görüntüleri (ASANA):
+
+![alt text](sprint_files/sprint2/sprint2.PNG)
+
+![alt text](sprint_files/sprint2/sprint2-1.PNG)
+
+![alt text](sprint_files/sprint2/sprint2-2.PNG)
+
+<br>
+
+## Uygulama Görüntüleri (App ve API)
+
+<div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="flex: 1 1 45%;">
+    <img src="./sprint_files/sprint2/proje1.PNG" alt="Proje 1" style="width: 100%;">
+  </div>
+  <div style="flex: 1 1 45%;">
+    <img src="./sprint_files/sprint2/proje2.PNG" alt="Proje 2" style="width: 100%;">
+  </div>
+  <div style="flex: 1 1 45%;">
+    <img src="./sprint_files/sprint2/proje3.PNG" alt="Proje 3" style="width: 100%;">
+  </div>
+  <div style="flex: 1 1 45%;">
+    <img src="./sprint_files/sprint2/proje4.PNG" alt="Proje 4" style="width: 100%;">
+  </div>
+  <div style="flex: 1 1 45%;">
+    <img src="./sprint_files/sprint2/proje5.PNG" alt="Proje 5" style="width: 50%;">
+  </div>
+  <div style=";">
+    <img src="./sprint_files/sprint2/proje6.PNG" alt="Proje 6" style="width: 100%;">
+  </div>
+</div>
+
+<br>
+
+## Sprint Review: 
+**Katılımcılar:**
+- Vehbi Özcan (Scrum Master)
+- Yusuf Alp Yıldız (Product Owner)
+
+**Özet:** <br>
+Bu sprintte takım, kullanıcının ProjeXpert'e kaydolması ve giriş yapabilmesi, projelerini yönetebilmesi ve proje detaylarına erişebilmesi için gerekli sayfaları ve işlevleri geliştirdi. Ayrıca, bu sayfalar ve işlemler için gerekli API endpointleri oluşturuldu. Sprint boyunca kullanıcı kayıt, kullanıcı giriş, projelerim ve proje detay sayfaları başarıyla tamamlandı ve test edildi. API entegrasyonları ve güvenlik kontrolleri gerçekleştirildi. Ekip Slack üzerinden iletişimde kaldı ve huddle görüşmeleri ile sorunlar çözüldü. Bu sprintte belirlenen hedefler başarıyla tamamlandı ve uygulamanın işlevselliği önemli ölçüde geliştirildi.
+
+## Sprint Retrospective:
+**Katılımcılar:**
+- Vehbi Özcan (Scrum Master)
+- Yusuf Alp Yıldız (Product Owner)
+
+**Özet:** <br>
+Bu sprintte kullanıcı kayıt, giriş, projelerim ve proje detay sayfalarının yanı sıra API entegrasyonlarının başarılı bir şekilde tamamlanması takımın önemli bir başarısı oldu. Ancak, iletişimde ve iş birliği süreçlerinde bazı iyileştirilmesi gereken noktalar tespit edildi. Özellikle, takımın artık daha çok kodsal, tasarımsal ve teknik işlere zaman ayırması gerektiği vurgulandı. İletişimde etkinliğin artırılması ve hızlanması gerektiği de önemli bir çıkarım olarak belirlendi. Gelecek sprintlerde bu konulara odaklanarak, takımın performansını daha da artırmak için belirlenen eylem planları uygulanacak.
+
+## Sprint Backlog URL:
+
+<a href="https://app.asana.com/0/1207861790503404/1207861643069817" style="font-size:18px;display:flex; align-items:center;"><img src="./sprint_files/shared/asana.png" style="width:48px; height:48px; margin-right:5px"><span>Asana Sprint 2 backlog workspace bağlantısı</span></a>
 
 ---
