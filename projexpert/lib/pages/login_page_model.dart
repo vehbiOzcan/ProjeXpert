@@ -1,12 +1,12 @@
 
 import 'package:flutterflow_ui/flutterflow_ui.dart';
 
-import 'login_pages_widget.dart' show LoginPagesWidget;
+import 'login_page_widget.dart' show LoginPageWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class LoginPagesModel extends FlutterFlowModel<LoginPagesWidget> {
+class LoginPageModel extends FlutterFlowModel<LoginPageWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

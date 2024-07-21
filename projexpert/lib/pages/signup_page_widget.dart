@@ -2,7 +2,7 @@ import 'package:flutterflow_ui/flutterflow_ui.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:projexpert/pages/login_pages_widget.dart';
+import 'package:projexpert/pages/login_page_widget.dart';
 import 'package:provider/provider.dart';
 
 import 'signup_page_model.dart';
@@ -396,7 +396,7 @@ class _SignupPageWidgetState extends State<SignupPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            LoginPagesWidget()), // SelectionCategories'e
+                                            LoginPageWidget()), // SelectionCategories'e
                                   );
                         },
                         child: Text(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projexpert/pages/login_pages_widget.dart';
+import 'package:projexpert/pages/login_page_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LoginPagesWidget(),
+      home: const LoginPageWidget(),
     );
   }
 }

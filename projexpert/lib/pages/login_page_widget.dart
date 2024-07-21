@@ -2,14 +2,15 @@ import 'package:flutterflow_ui/flutterflow_ui.dart';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projexpert/pages/project_page_widget.dart';
 import 'package:projexpert/pages/signup_page_widget.dart';
 import 'package:provider/provider.dart';
 
-import 'login_pages_model.dart';
-export 'login_pages_model.dart';
+import 'login_page_model.dart';
+export 'login_page_model.dart';
 
-class LoginPagesWidget extends StatefulWidget {
-  const LoginPagesWidget({
+class LoginPageWidget extends StatefulWidget {
+  const LoginPageWidget({
     super.key,
     double? pdLogo,
   }) : this.pdLogo = pdLogo ?? 10.0;
@@ -17,18 +18,18 @@ class LoginPagesWidget extends StatefulWidget {
   final double pdLogo;
 
   @override
-  State<LoginPagesWidget> createState() => _LoginPagesWidgetState();
+  State<LoginPageWidget> createState() => _LoginPageWidgetState();
 }
 
-class _LoginPagesWidgetState extends State<LoginPagesWidget> {
-  late LoginPagesModel _model;
+class _LoginPageWidgetState extends State<LoginPageWidget> {
+  late LoginPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => LoginPagesModel());
+    _model = createModel(context, () => LoginPageModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
@@ -109,18 +110,20 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'E-Posta',
-                            labelStyle:
-                                FlutterFlowTheme.of(context).bodyMedium.override(
-                                      fontFamily: 'Readex Pro',
-                                      fontSize: 18,
-                                      letterSpacing: 0,
-                                    ),
-                            hintStyle:
-                                FlutterFlowTheme.of(context).labelMedium.override(
-                                      fontFamily: 'Readex Pro',
-                                      fontSize: 14,
-                                      letterSpacing: 0,
-                                    ),
+                            labelStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 18,
+                                  letterSpacing: 0,
+                                ),
+                            hintStyle: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 14,
+                                  letterSpacing: 0,
+                                ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
                                 color: FlutterFlowTheme.of(context).alternate,
@@ -150,11 +153,12 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                               borderRadius: BorderRadius.circular(15),
                             ),
                           ),
-                          style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Readex Pro',
-                                fontSize: 14,
-                                letterSpacing: 0,
-                              ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 14,
+                                    letterSpacing: 0,
+                                  ),
                           validator: _model.textController1Validator
                               .asValidator(context),
                         ),
@@ -162,7 +166,8 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                       Align(
                         alignment: AlignmentDirectional(-1, -1),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(10, 15, 10, 0),
                           child: TextFormField(
                             controller: _model.textController2,
                             focusNode: _model.textFieldFocusNode2,
@@ -226,11 +231,12 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                                 ),
                               ),
                             ),
-                            style:
-                                FlutterFlowTheme.of(context).bodyMedium.override(
-                                      fontFamily: 'Readex Pro',
-                                      letterSpacing: 0,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0,
+                                ),
                             validator: _model.textController2Validator
                                 .asValidator(context),
                           ),
@@ -243,7 +249,12 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
                   child: FFButtonWidget(
                     onPressed: () {
-                      print('Button pressed ...');
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ProjectPageWidget()), // SelectionCategories'e
+                      );
                     },
                     text: 'Giriş Yap',
                     options: FFButtonOptions(
@@ -252,11 +263,12 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                       iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                       color: Color(0xFFFE9F1A),
-                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                            fontFamily: 'Readex Pro',
-                            color: Colors.white,
-                            letterSpacing: 0,
-                          ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Readex Pro',
+                                color: Colors.white,
+                                letterSpacing: 0,
+                              ),
                       elevation: 3,
                       borderSide: BorderSide(
                         color: Colors.transparent,
@@ -271,11 +283,11 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                   child: FFButtonWidget(
                     onPressed: () {
                       Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            SignupPageWidget()), // SelectionCategories'e
-                                  );
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SignupPageWidget()), // SelectionCategories'e
+                      );
                     },
                     text: 'Kayıt Ol',
                     options: FFButtonOptions(
@@ -284,11 +296,12 @@ class _LoginPagesWidgetState extends State<LoginPagesWidget> {
                       padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
                       iconPadding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                       color: Color(0xFFEB5A46),
-                      textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                            fontFamily: 'Readex Pro',
-                            color: Colors.white,
-                            letterSpacing: 0,
-                          ),
+                      textStyle:
+                          FlutterFlowTheme.of(context).titleSmall.override(
+                                fontFamily: 'Readex Pro',
+                                color: Colors.white,
+                                letterSpacing: 0,
+                              ),
                       elevation: 3,
                       borderSide: BorderSide(
                         color: Colors.transparent,
