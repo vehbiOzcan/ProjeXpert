@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:projexpert/helpers/PreferencesManager.dart';
 import 'package:projexpert/pages/login_page_widget.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await PreferencesManager().init();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
