@@ -9,7 +9,10 @@ import 'projectdetail_page_model.dart';
 export 'projectdetail_page_model.dart';
 
 class ProjectdetailPageWidget extends StatefulWidget {
-  const ProjectdetailPageWidget({super.key});
+  final Map<String, dynamic> projectDetail;
+
+  const ProjectdetailPageWidget({Key? key, required this.projectDetail})
+      : super(key: key);
 
   @override
   State<ProjectdetailPageWidget> createState() =>
@@ -30,7 +33,6 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
   @override
   void dispose() {
     _model.dispose();
-
     super.dispose();
   }
 
@@ -48,7 +50,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
           child: FloatingActionButton(
             onPressed: () {
               Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => ProjectPageWidget()));
+                  MaterialPageRoute(builder: (context) => ProjectPageWidget()));
             },
             backgroundColor: Color(0xFFFF9F1A),
             elevation: 8,
@@ -63,20 +65,20 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
           backgroundColor: Color(0xFFFF9F1A),
           automaticallyImplyLeading: true,
           leading: FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back,
-                color: FlutterFlowTheme.of(context).primaryBackground,
-                size: 30,
-              ),
-              onPressed: () async {
-                Navigator.pushReplacement(context,
-                    MaterialPageRoute(builder: (context) => ProjectPageWidget()));
-              },
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.arrow_back,
+              color: FlutterFlowTheme.of(context).primaryBackground,
+              size: 30,
             ),
+            onPressed: () async {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => ProjectPageWidget()));
+            },
+          ),
           title: Text(
             'Ayrıntılar',
             style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -106,7 +108,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                       children: [
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
+                              EdgeInsetsDirectional.fromSTEB(16, 10, 16, 0),
                           child: Container(
                             width: double.infinity,
                             constraints: BoxConstraints(
@@ -153,7 +155,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                   style: TextStyle(),
                                                 ),
                                                 TextSpan(
-                                                  text: 'ProjectName',
+                                                  text: widget.projectDetail[
+                                                      "projectName"],
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -184,7 +187,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                 style: TextStyle(),
                                               ),
                                               TextSpan(
-                                                text: 'createDate',
+                                                text: widget.projectDetail[
+                                                    'createDate'],
                                                 style: TextStyle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -211,7 +215,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                 style: TextStyle(),
                                               ),
                                               TextSpan(
-                                                text: 'projectOwner',
+                                                text: widget
+                                                    .projectDetail['ownerName'],
                                                 style: TextStyle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -238,7 +243,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                 style: TextStyle(),
                                               ),
                                               TextSpan(
-                                                text: 'projectNo',
+                                                text: widget
+                                                    .projectDetail['projectNo'],
                                                 style: TextStyle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -265,7 +271,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                 style: TextStyle(),
                                               ),
                                               TextSpan(
-                                                text: '_id',
+                                                text:
+                                                    widget.projectDetail['_id'],
                                                 style: TextStyle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
@@ -282,57 +289,76 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                 ),
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment: CrossAxisAlignment.end,
-                                    children: [
-                                      Container(
-                                        height: 32,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .accent1,
-                                          borderRadius:
-                                              BorderRadius.circular(12),
-                                          border: Border.all(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2,
-                                          ),
-                                        ),
-                                        child: Align(
-                                          alignment: AlignmentDirectional(0, 0),
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12, 0, 12, 0),
-                                            child: Text(
-                                              'status',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyMedium
-                                                  .override(
-                                                    fontFamily: 'Readex Pro',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                    letterSpacing: 0,
-                                                  ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 12, 0, 0),
+                                          child: Container(
+                                            height: 32,
+                                            decoration: BoxDecoration(
+                                              color: _getStatusColor(widget
+                                                      .projectDetail["status"])
+                                                  .withOpacity(0.2),
+                                              borderRadius:
+                                                  BorderRadius.circular(12),
+                                              border: Border.all(
+                                                color: _getStatusColor(widget
+                                                    .projectDetail["status"]),
+                                                width: 2,
+                                              ),
+                                            ),
+                                            child: Align(
+                                              alignment:
+                                                  AlignmentDirectional(0, 0),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(12, 0, 12, 0),
+                                                child: Text(
+                                                  widget
+                                                      .projectDetail['status'],
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color: _getStatusColor(
+                                                            widget.projectDetail[
+                                                                "status"]),
+                                                        letterSpacing: 0,
+                                                      ),
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ),
-                                    ],
+                                        )
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
                           ),
                         ),
+                        Align(
+                          alignment: AlignmentDirectional(-1, -1),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(15, 20, 0, 0),
+                            child: Text(
+                              'Proje Belgesi Oluştur',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    fontSize: 18,
+                                    letterSpacing: 0,
+                                  ),
+                            ),
+                          ),
+                        ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 25, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -699,5 +725,18 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
         ),
       ),
     );
+  }
+
+  Color _getStatusColor(String status) {
+    switch (status) {
+      case 'completed':
+        return Color(0xFF70b500);
+      case 'ongoing':
+        return Color(0xFFff9f1a);
+      case 'planned':
+        return Color(0xFFc377e0);
+      default:
+        return FlutterFlowTheme.of(context).accent1;
+    }
   }
 }

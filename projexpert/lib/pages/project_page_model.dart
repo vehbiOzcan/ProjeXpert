@@ -154,7 +154,7 @@ Future<void> fetchProjects() async {
     if (response.statusCode == 200) {
       // Log the response body to inspect the JSON structure
       //print('Response body: ${response.body}');
-      print('PREFERENCES: $accessToken');
+      //print('PREFERENCES: $accessToken');
       
       // Decode the response body as a Map
       Map<String, dynamic> jsonResponse = json.decode(response.body);
@@ -201,7 +201,7 @@ class Project {
   factory Project.fromJson(Map<String, dynamic> json) {
     return Project(
       id: json['_id'],
-      projectNo: json['_id'], // projectNo as _id
+      projectNo: json['projectNo'], // projectNo as _id
       projectName: json['projectName'],
       status: json['status'],
       createDate: json['createDate'],
