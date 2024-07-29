@@ -65,6 +65,9 @@ flutter:
   assets:
     - ./lib/assets/images/logos.png
     - ./lib/assets/images/bg_group_1.png
+    - ./lib/assets/images/OKR.png
+    - ./lib/assets/images/SPRINT.png
+    - ./lib/assets/images/PID.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
