@@ -105,7 +105,7 @@ class _ProjectPageWidgetState extends State<ProjectPageWidget> {
       print("PROJECT INFO: " + name + " " + date + " " + status);
       final response = await http.post(url, headers: headers, body: body);
 
-      if (response.statusCode == 201) {
+      if (response.statusCode == 200) {
         print('Project added successfully');
       } else {
         print(
