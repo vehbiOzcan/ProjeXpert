@@ -2,6 +2,7 @@ import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projexpert/pages/createdoc_page_widget.dart';
 import 'package:projexpert/pages/project_page_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -365,8 +366,12 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                             children: [
                               InkWell(
                                 onTap: () {
-                                  // Dokunma işlevi burada tanımlanır
-                                  print('Card Tapped!');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CreatedocPageWidget(docType: "PID",)),
+                                  );
                                 },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -418,8 +423,12 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  // Dokunma işlevi burada tanımlanır
-                                  print('Card Tapped!');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CreatedocPageWidget(docType: "OKR",)),
+                                  );
                                 },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -469,9 +478,13 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                 ),
                               ),
                               InkWell(
-                                 onTap: () {
-                                  
-                                  print('Card Tapped!');
+                                onTap: () {
+                                 Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            CreatedocPageWidget(docType: "SPRINT",)),
+                                  );
                                 },
                                 child: Card(
                                   clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -492,8 +505,9 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                              0, 5, 0, 0),
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 5, 0, 0),
                                           child: ClipRRect(
                                             borderRadius:
                                                 BorderRadius.circular(8),

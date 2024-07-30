@@ -91,7 +91,7 @@ class _ProjectPageWidgetState extends State<ProjectPageWidget> {
       if (accessToken == null) {
         throw Exception('Access token is not available.');
       }
-      final url = Uri.parse('http://10.0.2.2:15000/api/project');
+      final url = Uri.parse('http://10.0.2.2:15000/api/project/add-project');
       final headers = {
         'Authorization': 'Bearer: $accessToken',
         'Content-Type': 'application/json',
