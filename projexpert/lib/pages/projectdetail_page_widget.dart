@@ -39,6 +39,9 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    //print(widget.projectDetail['projectDocs']);
+    final List<dynamic> docs = widget.projectDetail['projectDocs'];
+    
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -575,11 +578,13 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                     ),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                      child: ListView(
+                      child: ListView.builder(
                         padding: EdgeInsets.zero,
                         scrollDirection: Axis.vertical,
-                        children: [
-                          Padding(
+                        itemCount: docs.length,
+                        itemBuilder: (context, index) {
+                          final doc = docs[index];
+                          return Padding(
                             padding:
                                 EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
                             child: Container(
@@ -634,7 +639,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                   style: TextStyle(),
                                                 ),
                                                 TextSpan(
-                                                  text: 'name',
+                                                  text: doc["name"],
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -663,7 +668,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                   style: TextStyle(),
                                                 ),
                                                 TextSpan(
-                                                  text: 'docType',
+                                                  text: doc["docType"],
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -686,7 +691,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                             alignment:
                                                 AlignmentDirectional(1, 0),
                                             child: Text(
-                                              'date',
+                                              doc["date"].toString().substring(0,10),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -711,7 +716,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () {
-                                            print('Button pressed ...');
+                                            print("Button index" + index.toString());
                                           },
                                           text: 'Gör',
                                           options: FFButtonOptions(
@@ -747,8 +752,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                 ),
                               ),
                             ),
-                          )
-                        ],
+                          );
+                        }, 
                       ),
                     ),
                   ),

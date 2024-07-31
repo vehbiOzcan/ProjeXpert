@@ -1,8 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:projexpert/helpers/PreferencesManager.dart';
+import 'package:projexpert/pages/project_page_widget.dart';
+import 'package:projexpert/pages/projectdetail_page_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 
@@ -47,7 +51,7 @@ class _EditdocPageWidgetState extends State<EditdocPageWidget> {
       if (accessToken == null) {
         throw Exception('Access token is not available.');
       }
-      final url = Uri.parse('http://10.0.2.2:15000/api/project/add-project');
+      final url = Uri.parse('http://10.0.2.2:15000/api/project/${widget.projectId}/save-doc');
       final headers = {
         'Authorization': 'Bearer: $accessToken',
         'Content-Type': 'application/json',
@@ -55,9 +59,12 @@ class _EditdocPageWidgetState extends State<EditdocPageWidget> {
       final body = jsonEncode(widget.document);
      
       final response = await http.post(url, headers: headers, body: body);
+      Map<String, dynamic> jsonResponse = json.decode(response.body);
 
       if (response.statusCode == 200) {
         print('Project added successfully');
+        Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => ProjectdetailPageWidget(projectDetail: jsonResponse['data'],)));
       } else {
         print(
             'Failed to add project: ${response.statusCode} - ${response.body}');
@@ -193,7 +200,7 @@ class _EditdocPageWidgetState extends State<EditdocPageWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
                     child: FFButtonWidget(
                       onPressed: () {
-                        
+                        _addDocument();
                       },
                       text: 'Kaydet',
                       options: FFButtonOptions(
