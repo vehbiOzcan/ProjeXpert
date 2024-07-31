@@ -2,6 +2,7 @@ import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:markdown/markdown.dart' as md;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -203,7 +204,7 @@ class _DocviewPageWidgetState extends State<DocviewPageWidget> {
                                                           style: TextStyle(),
                                                         ),
                                                         TextSpan(
-                                                          text: widget.docDetail['docType'],
+                                                          text: _getDocType(widget.docDetail['docType']),
                                                           style: TextStyle(
                                                             color: FlutterFlowTheme
                                                                     .of(context)
@@ -346,5 +347,14 @@ class _DocviewPageWidgetState extends State<DocviewPageWidget> {
         ),
       ),
     );
+  }
+
+   String _getDocType(String dt){
+    
+    if(dt == "PID") return "Proje Başlatma";
+    if(dt == "OKR") return "OKR";
+    if(dt == "SPRINT") return "Sprint Planı";
+    
+    return dt;
   }
 }
