@@ -1,18 +1,22 @@
+import 'dart:convert';
 import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projexpert/helpers/PreferencesManager.dart';
 import 'package:projexpert/pages/editdoc_page_widget.dart';
 import 'package:projexpert/pages/projectdetail_page_widget.dart';
 import 'package:provider/provider.dart';
+import 'package:http/http.dart' as http;
 
 import 'createdoc_page_model.dart';
 export 'createdoc_page_model.dart';
 
 class CreatedocPageWidget extends StatefulWidget {
   final String docType;
-
-  const CreatedocPageWidget({Key? key, required this.docType})
+  final String projectId;
+  
+  const CreatedocPageWidget({Key? key, required this.docType, required this.projectId})
       : super(key: key);
   @override
   State<CreatedocPageWidget> createState() => _CreatedocPageWidgetState();
@@ -53,7 +57,52 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
   String docName = '';
   String content = '';
   String docType = '';
-  String projectDate = '';
+  String docDate = '';
+
+  Future<void> _createDoc(
+      String name, String content, String docType, String pdate) async {
+    try {
+      final accessToken = await PreferencesManager().getAccessToken();
+
+      if (accessToken == null) {
+        throw Exception('Access token is not available.');
+      }
+      final url = Uri.parse('http://10.0.2.2:15000/api/project/create-doc');
+      final headers = {
+        'Authorization': 'Bearer: $accessToken',
+        'Content-Type': 'application/json',
+      };
+      final body = jsonEncode({
+        'docType': docType, 
+      });
+      
+      print("PROJECT INFO: " + name + " " + pdate + " " + docType);
+      
+      final response = await http.post(url, headers: headers, body: body);
+      
+      Map<String, dynamic> jsonResponse = json.decode(response.body);
+      
+      final Map<String,dynamic> document = {
+        'name': name,
+        'docType': docType,
+        'content': jsonResponse['data'],
+        'date': pdate,
+      };
+      Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => EditdocPageWidget(document: document,projectId: widget.projectId)));
+      
+      if (response.statusCode == 200) {
+        print('Document Created Successfully');
+        
+      } else {
+        print(
+            'Failed to add project: ${response.statusCode} - ${response.body}');
+      }
+    } catch (e) {
+      print('Error adding project: $e');
+    }
+    
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -382,7 +431,7 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                                             _datePickedDate.month,
                                             _datePickedDate.day,
                                           );
-                                          projectDate =
+                                          docDate =
                                               _model.datePicked.toString();
                                         });
                                       }
@@ -443,12 +492,8 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
                     child: FFButtonWidget(
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  EditdocPageWidget()), // SelectionCategories'e
-                        );
+                        docType = widget.docType;
+                        _createDoc(docName, content, docType, docDate);
                       },
                       text: 'Oluştur',
                       options: FFButtonOptions(

@@ -370,7 +370,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "PID",)),
+                                            CreatedocPageWidget(docType: "PID", projectId: widget.projectDetail['_id'],)),
                                   );
                                 },
                                 child: Card(
@@ -427,7 +427,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "OKR",)),
+                                            CreatedocPageWidget(docType: "OKR",projectId: widget.projectDetail['_id'],)),
                                   );
                                 },
                                 child: Card(
@@ -483,7 +483,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "SPRINT",)),
+                                            CreatedocPageWidget(docType: "SPRINT",projectId: widget.projectDetail['_id'],)),
                                   );
                                 },
                                 child: Card(

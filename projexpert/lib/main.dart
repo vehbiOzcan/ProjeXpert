@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projexpert/helpers/PreferencesManager.dart';
 import 'package:projexpert/pages/login_page_widget.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PreferencesManager().init();
-  await dotenv.load(fileName: ".env");
+  //print(dotenv.env['API_KEY']);
   runApp(MyApp());
 }
 
