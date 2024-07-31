@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:projexpert/pages/createdoc_page_widget.dart';
+import 'package:projexpert/pages/docview_page_widget.dart';
 import 'package:projexpert/pages/project_page_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -41,7 +42,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
   Widget build(BuildContext context) {
     //print(widget.projectDetail['projectDocs']);
     final List<dynamic> docs = widget.projectDetail['projectDocs'];
-    
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -373,7 +374,11 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "PID", projectId: widget.projectDetail['_id'],)),
+                                            CreatedocPageWidget(
+                                              docType: "PID",
+                                              projectId:
+                                                  widget.projectDetail['_id'],
+                                            )),
                                   );
                                 },
                                 child: Card(
@@ -430,7 +435,11 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "OKR",projectId: widget.projectDetail['_id'],)),
+                                            CreatedocPageWidget(
+                                              docType: "OKR",
+                                              projectId:
+                                                  widget.projectDetail['_id'],
+                                            )),
                                   );
                                 },
                                 child: Card(
@@ -482,11 +491,15 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                               ),
                               InkWell(
                                 onTap: () {
-                                 Navigator.push(
+                                  Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            CreatedocPageWidget(docType: "SPRINT",projectId: widget.projectDetail['_id'],)),
+                                            CreatedocPageWidget(
+                                              docType: "SPRINT",
+                                              projectId:
+                                                  widget.projectDetail['_id'],
+                                            )),
                                   );
                                 },
                                 child: Card(
@@ -561,7 +574,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(15, 10, 15, 0),
                   child: Container(
                     width: double.infinity,
-                    height: 250,
+                    height: 300,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
@@ -691,7 +704,9 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                             alignment:
                                                 AlignmentDirectional(1, 0),
                                             child: Text(
-                                              doc["date"].toString().substring(0,10),
+                                              doc["date"]
+                                                  .toString()
+                                                  .substring(0, 10),
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -716,7 +731,14 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                       children: [
                                         FFButtonWidget(
                                           onPressed: () {
-                                            print("Button index" + index.toString());
+                                            print("Button index" +
+                                                index.toString());
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      DocviewPageWidget(docDetail: {'index':index,...doc},)),
+                                            );
                                           },
                                           text: 'Gör',
                                           options: FFButtonOptions(
@@ -753,7 +775,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                               ),
                             ),
                           );
-                        }, 
+                        },
                       ),
                     ),
                   ),
