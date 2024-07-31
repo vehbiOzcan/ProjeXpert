@@ -889,4 +889,3 @@ class _SignupPageWidgetState extends State<SignupPageWidget> {
     );
   }
 }
-

@@ -2,6 +2,7 @@ import 'package:flutterflow_ui/flutterflow_ui.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projexpert/pages/editdoc_page_widget.dart';
 import 'package:projexpert/pages/projectdetail_page_widget.dart';
 import 'package:provider/provider.dart';
 
@@ -49,6 +50,11 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
     return "";
   }
 
+  String docName = '';
+  String content = '';
+  String docType = '';
+  String projectDate = '';
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -61,7 +67,7 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
-          leading:  FlutterFlowIconButton(
+          leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30,
             borderWidth: 1,
@@ -73,7 +79,6 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
             ),
             onPressed: () async {
               Navigator.pop(context);
-                  
             },
           ),
           title: Column(
@@ -129,6 +134,9 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   TextFormField(
+                                    onChanged: (value) {
+                                      docName = value;
+                                    },
                                     controller: _model.taskTextController,
                                     focusNode: _model.taskFocusNode,
                                     autofocus: true,
@@ -212,6 +220,9 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                                         .asValidator(context),
                                   ),
                                   TextFormField(
+                                    onChanged: (value) {
+                                      content = value;
+                                    },
                                     controller:
                                         _model.descriptionTextController,
                                     focusNode: _model.descriptionFocusNode,
@@ -371,6 +382,8 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                                             _datePickedDate.month,
                                             _datePickedDate.day,
                                           );
+                                          projectDate =
+                                              _model.datePicked.toString();
                                         });
                                       }
                                     },
@@ -430,7 +443,12 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 12),
                     child: FFButtonWidget(
                       onPressed: () {
-                        print('Button pressed ...');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  EditdocPageWidget()), // SelectionCategories'e
+                        );
                       },
                       text: 'Oluştur',
                       options: FFButtonOptions(
