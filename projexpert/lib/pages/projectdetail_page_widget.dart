@@ -599,7 +599,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                           final doc = docs[index];
                           return Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(16,0, 16, 10),
+                                EdgeInsetsDirectional.fromSTEB(16, 0, 16, 10),
                             child: Container(
                               width: double.infinity,
                               constraints: BoxConstraints(
@@ -681,7 +681,8 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                                   style: TextStyle(),
                                                 ),
                                                 TextSpan(
-                                                  text: _getDocType(doc["docType"]),
+                                                  text: _getDocType(
+                                                      doc["docType"]),
                                                   style: TextStyle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -737,7 +738,12 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      DocviewPageWidget(docDetail: {'index':index,...doc},)),
+                                                      DocviewPageWidget(
+                                                        docDetail: {
+                                                          'index': index,
+                                                          ...doc
+                                                        },
+                                                      )),
                                             );
                                           },
                                           text: 'Gör',
@@ -801,12 +807,11 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
     }
   }
 
-  String _getDocType(String dt){
-    
-    if(dt == "PID") return "Proje Başlatma";
-    if(dt == "OKR") return "OKR";
-    if(dt == "SPRINT") return "Sprint Planı";
-    
+  String _getDocType(String dt) {
+    if (dt == "PID") return "Proje Başlatma";
+    if (dt == "OKR") return "OKR";
+    if (dt == "SPRINT") return "Sprint Planı";
+
     return dt;
   }
 }

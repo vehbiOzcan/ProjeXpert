@@ -15,8 +15,9 @@ export 'createdoc_page_model.dart';
 class CreatedocPageWidget extends StatefulWidget {
   final String docType;
   final String projectId;
-  
-  const CreatedocPageWidget({Key? key, required this.docType, required this.projectId})
+
+  const CreatedocPageWidget(
+      {Key? key, required this.docType, required this.projectId})
       : super(key: key);
   @override
   State<CreatedocPageWidget> createState() => _CreatedocPageWidgetState();
@@ -26,6 +27,7 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
   late CreatedocPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  bool _isLoading = false; // Yüklenme durumunu tutar
 
   @override
   void initState() {
@@ -61,6 +63,9 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
 
   Future<void> _createDoc(
       String name, String content, String docType, String pdate) async {
+    setState(() {
+      _isLoading = true; // İşlem başlıyor
+    });
     try {
       final accessToken = await PreferencesManager().getAccessToken();
 
@@ -73,35 +78,40 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
         'Content-Type': 'application/json',
       };
       final body = jsonEncode({
-        'docType': docType, 
+        'docType': docType,
       });
-      
+
       print("PROJECT INFO: " + name + " " + pdate + " " + docType);
-      
+
       final response = await http.post(url, headers: headers, body: body);
-      
+
       Map<String, dynamic> jsonResponse = json.decode(response.body);
-      
-      final Map<String,dynamic> document = {
+
+      final Map<String, dynamic> document = {
         'name': name,
         'docType': docType,
         'content': jsonResponse['data'],
         'date': pdate,
       };
-      Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => EditdocPageWidget(document: document,projectId: widget.projectId)));
-      
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+              builder: (context) => EditdocPageWidget(
+                  document: document, projectId: widget.projectId)));
+
       if (response.statusCode == 200) {
         print('Document Created Successfully');
-        
       } else {
         print(
             'Failed to add project: ${response.statusCode} - ${response.body}');
       }
     } catch (e) {
       print('Error adding project: $e');
+    }finally{
+      setState(() {
+        _isLoading = false; // İşlem tamamlandı
+      });
     }
-    
   }
 
   @override
@@ -493,9 +503,10 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                     child: FFButtonWidget(
                       onPressed: () {
                         docType = widget.docType;
-                        _createDoc(docName, content, docType, docDate);
+                        _isLoading ? null : _createDoc(docName, content, docType, docDate);
+                        
                       },
-                      text: 'Oluştur',
+                      text: _isLoading ? 'Oluşturuluyor...' : "Belge Oluştur",
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 48,
