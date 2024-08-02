@@ -1,0 +1,11 @@
+[
+    {
+        "_id": "66a531c531d0c929db59da2b",
+        "name": "Vehbi Özcan",
+        "email": "test@gmail.com",
+        "password": "123456",
+        "phone": "02222222",
+        "gender": "1",
+        "avatar": "default.jpg"
+    }
+]

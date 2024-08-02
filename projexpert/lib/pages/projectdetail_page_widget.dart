@@ -193,7 +193,7 @@ class _ProjectdetailPageWidgetState extends State<ProjectdetailPageWidget> {
                                               ),
                                               TextSpan(
                                                 text: widget.projectDetail[
-                                                    'createDate'],
+                                                    'createDate'].toString().split("T")[0],
                                                 style: TextStyle(
                                                   color: FlutterFlowTheme.of(
                                                           context)

@@ -377,7 +377,7 @@ class _CreatedocPageWidgetState extends State<CreatedocPageWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 12, 0, 0),
+                                        0, 0, 0, 0),
                                     child: Container(
                                       width: 165,
                                       height: 32,

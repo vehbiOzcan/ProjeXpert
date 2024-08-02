@@ -104,7 +104,12 @@ class _ProjectPageWidgetState extends State<ProjectPageWidget> {
       });
       print("PROJECT INFO: " + name + " " + date + " " + status);
       final response = await http.post(url, headers: headers, body: body);
-
+      Map<String, dynamic> jsonResponse = json.decode(response.body);
+      
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+              builder: (context) => ProjectdetailPageWidget(projectDetail: jsonResponse['data'],)));
       if (response.statusCode == 200) {
         print('Project added successfully');
       } else {
