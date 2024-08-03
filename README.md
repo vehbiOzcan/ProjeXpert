@@ -72,9 +72,12 @@ Flutter 97
 </br>
 
 # Ürün Logosu
-<img src="./sprint_files/shared/logo.png" style="width: 100%;
-  max-width: 300px;
-  height: auto; ">
+<img src="./sprint_files/shared/logo.png" width="300">
+
+</br>
+
+# Tanıtım Videosu
+<a href="https://www.youtube.com/watch?v=dsu4V2JrJWg"><h4>ProjeXpert - Bootcamp 2024 | Oyun ve Uygulama Akademisi</h4></a>
 
 </br>
 
@@ -410,9 +413,11 @@ Bu sprintte, ProjeXpert uygulamasını başarıyla tamamlandı. Kullanıcı dene
 
 ## Node Sunucusunu Yerel Olarak Çalıştırmak İçin Adımlar
 
-1. **Repo'yu Klonlayın:**
-   ```bash
-   git clone <repo-url>
+### Repo'yu Klonlayın:
+
+```bash
+git clone https://github.com/OUA-Bootcamp-2024-Flutter-97/oua-bootcamp-2024.git
+```
 
 ### Gerekli Bağımlılıkları Yükleyin:
 
