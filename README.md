@@ -77,7 +77,7 @@ Flutter 97
 </br>
 
 # Tanıtım Videosu
-<a href="https://www.youtube.com/watch?v=dsu4V2JrJWg"><h4>ProjeXpert - Bootcamp 2024 | Oyun ve Uygulama Akademisi</h4></a>
+<a href="https://www.youtube.com/watch?v=dsu4V2JrJWg"><b>ProjeXpert - Bootcamp 2024 | Oyun ve Uygulama Akademisi</b></a>
 
 </br>
 
