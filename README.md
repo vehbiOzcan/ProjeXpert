@@ -21,6 +21,7 @@ Flutter 97
       <th>İsim</th>
       <th>Görev</th>
       <th>İletişim</th>
+      <th>Katılım</th>
     </tr>
   </thead>
   <tbody>
@@ -35,6 +36,7 @@ Flutter 97
           <img  src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
+      <td>Aktif</td>
     </tr>
     <tr>
       <td>Yusuf Alp Yıldız</td>
@@ -47,18 +49,7 @@ Flutter 97
           <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
-    </tr>
-    <tr>
-      <td>Zeynep Ceyhan</td>
-      <td>Developer</td>
-      <td>
-        <a href="https://github.com/ZeynepCeyhan" target="_blank">
-          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" style="width:16px;" alt="Github" class="icon">
-        </a>
-        <a href="https://www.linkedin.com/in/zeynep-ceyhan/" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
-        </a>
-      </td>
+      <td>Aktif</td>
     </tr>
     <tr>
       <td>Fazile Nisa Gazan</td>
@@ -68,6 +59,7 @@ Flutter 97
           <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" style="width:16px;" alt="LinkedIn" class="icon">
         </a>
       </td>
+      <td>Aktif</td>
     </tr>
   </tbody>
 </table>
